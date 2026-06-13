@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 
 export interface UseTypewriterOptions {
-    words: string[];
+    words: string[] | null;
     typingSpeed?: number;
     deletingSpeed?: number;
     pauseDuration?: number;
@@ -19,9 +19,11 @@ export function useTypewriter({
     const [typedText, setTypedText] = useState("");
     const [isDeleting, setIsDeleting] = useState(false);
 
-    const currentWord = words[wordIndex] || "";
+    const currentWord = words && words[wordIndex] || "";
 
     useEffect(() => {
+        if (!words) return;
+
         let timer: NodeJS.Timeout;
 
         const handleTyping = () => {
@@ -57,7 +59,7 @@ export function useTypewriter({
 
         handleTyping();
         return () => clearTimeout(timer);
-    }, [typedText, isDeleting, currentWord, words.length, typingSpeed, deletingSpeed, pauseDuration, emptyPauseDuration]);
+    }, [typedText, isDeleting, currentWord, words?.length, typingSpeed, deletingSpeed, pauseDuration, emptyPauseDuration]);
 
     return typedText;
 }

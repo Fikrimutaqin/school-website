@@ -11,6 +11,7 @@ import { DEFAULT_ACHIEVEMENT_DATA } from "@/types/achievement/achievement.type";
 import { DEFAULT_CURRICULUM_DATA } from "@/types/curriculum/curriculum.type";
 import { DEFAULT_NEWS_DATA } from "@/types/news/news.type";
 import { DEFAULT_MAPS_DATA } from "@/types/maps/maps.type";
+import FloatingAnnouncement from "@/components/shared/ui/floating-announcement";
 
 export default function Home() {
   return (
@@ -21,6 +22,7 @@ export default function Home() {
       <CurriculumSection data={DEFAULT_CURRICULUM_DATA} />
       <NewsSection data={DEFAULT_NEWS_DATA} />
       <MapsSection data={DEFAULT_MAPS_DATA} />
+      <FloatingAnnouncement />
     </div>
   );
 }

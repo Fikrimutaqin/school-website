@@ -49,18 +49,6 @@ npx shadcn@latest add card
 npx shadcn@latest add input
 ```
 
-## Project Structure
-
-```
-├── app/              # Next.js App Router pages & layouts
-├── components/
-│   └── ui/           # shadcn/ui components
-├── hooks/            # Custom React hooks
-├── lib/
-│   └── utils.ts      # cn() utility and helpers
-└── public/           # Static assets
-```
-
 ## Scripts
 
 ```bash

@@ -1,14 +1,15 @@
 export interface HeroData {
-    badgeText: string;
-    titlePrefix: string;
-    titleHighlight: string;
-    titleSuffix: string;
-    description: string;
-    primaryBtnText: string;
-    primaryBtnLink: string;
-    secondaryBtnText: string;
-    secondaryBtnLink: string;
-    backgroundImageUrl: string;
+    badgeText: string | null;
+    titlePrefix: string | null;
+    titleHighlight: string | null;
+    titleSuffix: string | null;
+    description: string | null;
+    primaryBtnText: string | null;
+    primaryBtnLink: string | null;
+    secondaryBtnText: string | null;
+    secondaryBtnLink: string | null;
+    backgroundImageUrl: string | null;
+    isShowIconBtnSecondary: boolean;
 }
 
 export interface HeroSectionProps {
@@ -26,5 +27,21 @@ export const DEFAULT_HERO_DATA: HeroData = {
     primaryBtnLink: "/programs",
     secondaryBtnText: "Virtual Tour",
     secondaryBtnLink: "/tour",
-    backgroundImageUrl: "/hero-bg.png"
+    backgroundImageUrl: "/hero-bg.png",
+    isShowIconBtnSecondary: true
 };
+
+export const DEFAULT_HERO_DATA_PROFILE: HeroData = {
+    badgeText: null,
+    titlePrefix: "Profil St. Academic Excellence",
+    titleHighlight: "",
+    titleSuffix: "",
+    description: "Membentuk pemimpin masa depan melalui tradisi keunggulan akademik dan pengembangan karakter yang kokoh.",
+    primaryBtnText: null,
+    primaryBtnLink: null,
+    secondaryBtnText: "See Profile",
+    secondaryBtnLink: "#scroll-down",
+    backgroundImageUrl: null,
+    isShowIconBtnSecondary: false
+};
+
