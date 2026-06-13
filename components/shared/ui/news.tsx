@@ -7,7 +7,7 @@ import { NewsSectionProps } from "@/types/news/news.type";
 
 export default function NewsSection({ data }: NewsSectionProps) {
     const featuredItem = data.items.find((item) => item.isFeatured) || data.items[0];
-    const nonFeaturedItems = data.items.filter((item) => item.id !== featuredItem?.id);
+    const nonFeaturedItems = data.items.filter((item) => item.id !== featuredItem?.id).slice(0, 3);
 
     return (
         <section className="w-full py-16 lg:py-20 bg-white">

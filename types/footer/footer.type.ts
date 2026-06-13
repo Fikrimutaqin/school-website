@@ -43,9 +43,9 @@ export const DEFAULT_FOOTER_DATA: FooterData = {
     navigationTitle: "Navigasi",
     navigationItems: [
         { label: "Profile Sekolah", href: "/profile" },
-        { label: "Akademik", href: "/akademik" },
-        { label: "Fasilitas", href: "/fasilitas" },
-        { label: "Pendaftaran", href: "/pendaftaran" }
+        { label: "Akademik", href: "/curriculum" },
+        { label: "Student", href: "/students" },
+        { label: "Pendaftaran", href: "/register-spmb" }
     ],
     contactTitle: "Kontak",
     contactDetails: {
@@ -56,11 +56,9 @@ export const DEFAULT_FOOTER_DATA: FooterData = {
     relatedLinksTitle: "Link Terkait",
     relatedLinksItems: [
         { label: "Hubungi Kami", href: "/contact" },
-        { label: "Lokasi", href: "/location" },
-        { label: "Peta Situs", href: "/sitemap" },
-        { label: "Kebijakan Privasi", href: "/privacy-policy" }
+        { label: "Kebijakan Privasi", href: "/terms" }
     ],
-    copyrightText: "© 2024 St. Akademi Excellence. All rights reserved.",
+    copyrightText: "St. Akademi Excellence. All rights reserved.",
     socials: {
         website: "https://stakademiexcellence.sch.id",
         email: "mailto:info@stakademiexcellence.sch.id",

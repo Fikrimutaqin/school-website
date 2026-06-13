@@ -24,9 +24,9 @@ export const DEFAULT_HERO_DATA: HeroData = {
     titleSuffix: " with Character & Competence",
     description: "Experience a transformative educational journey at St. Academic Excellence, where tradition meets innovation to prepare students for global success.",
     primaryBtnText: "Explore Our Programs",
-    primaryBtnLink: "/programs",
+    primaryBtnLink: "/curriculum",
     secondaryBtnText: "Virtual Tour",
-    secondaryBtnLink: "/tour",
+    secondaryBtnLink: "#tour",
     backgroundImageUrl: "/hero-bg.png",
     isShowIconBtnSecondary: true
 };
@@ -41,6 +41,20 @@ export const DEFAULT_HERO_DATA_PROFILE: HeroData = {
     primaryBtnLink: null,
     secondaryBtnText: "See Profile",
     secondaryBtnLink: "#scroll-down",
+    backgroundImageUrl: null,
+    isShowIconBtnSecondary: false
+};
+
+export const DEFAULT_HERO_DATA_CURRICULUM: HeroData = {
+    badgeText: "ACADEMIC FRAMEWORK",
+    titlePrefix: "Kurikulum & Program Pendidikan",
+    titleHighlight: "",
+    titleSuffix: "",
+    description: "Membentuk pemimpin masa depan melalui pendekatan holistik yang menggabungkan keunggulan akademik, pengembangan karakter, dan kompetensi global yang relevan dengan perkembangan zaman.Membentuk pemimpin masa depan melalui pendekatan holistik yang menggabungkan keunggulan akademik, pengembangan karakter, dan kompetensi global yang relevan dengan perkembangan zaman.",
+    primaryBtnText: null,
+    primaryBtnLink: null,
+    secondaryBtnText: null,
+    secondaryBtnLink: null,
     backgroundImageUrl: null,
     isShowIconBtnSecondary: false
 };

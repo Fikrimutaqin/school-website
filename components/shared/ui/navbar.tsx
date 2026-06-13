@@ -54,9 +54,9 @@ export default function NavbarUI({ menu = MENU }: NavbarProps) {
 
             {/* Actions (Right) */}
             <section className="flex-1 lg:flex justify-end items-center gap-3 hidden">
-                <Button className="bg-primary text-white font-semibold tracking-wide text-md rounded-full p-5 cursor-pointer hover:bg-transparent hover:border-2 hover:border-primary hover:text-primary hover:scale-110">
+                <Link href={"/register-spmb"} className="bg-primary text-white font-semibold tracking-wide text-md rounded-full p-4 cursor-pointer hover:bg-transparent hover:border-2 hover:border-primary hover:text-primary hover:scale-110">
                     Register SPMB Online
-                </Button>
+                </Link>
             </section>
 
             {/* Mobile Menu */}

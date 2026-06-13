@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import { Clock, MapPin, X } from "lucide-react";
+import { useUserLocation } from "@/hooks/use-user-location";
 
 interface PrayerTimesData {
     Fajr: string;
@@ -23,6 +24,7 @@ export default function PrayerTimes() {
     const [timings, setTimings] = useState<PrayerTimesData>(DEFAULT_TIMINGS);
     const [loading, setLoading] = useState(true);
     const [isVisible, setIsVisible] = useState(true);
+    const { city, province, error } = useUserLocation();
 
     useEffect(() => {
         // Read visibility from localStorage to persist user choice across pages
@@ -35,7 +37,7 @@ export default function PrayerTimes() {
             try {
                 // Fetch times for Jakarta, Indonesia (Method 11: Kemenag Indonesia or Method 2: ISNA)
                 const res = await fetch(
-                    "https://api.aladhan.com/v1/timingsByCity?city=Jakarta&country=Indonesia&method=11"
+                    `https://api.aladhan.com/v1/timingsByCity?city=${city}&country=Indonesia&method=11`
                 );
                 if (!res.ok) throw new Error("Failed to fetch");
                 const json = await res.json();
@@ -79,7 +81,9 @@ export default function PrayerTimes() {
             <div className="flex items-center gap-3 font-medium">
                 <div className="flex items-center gap-1 text-primary">
                     <MapPin className="w-3.5 h-3.5 text-primary" />
-                    <span>Jakarta, DKI</span>
+                    {!error && (
+                        <span>{city}, {province}</span>
+                    )}
                 </div>
                 <span className="text-black">|</span>
                 <span>{formattedDate}</span>

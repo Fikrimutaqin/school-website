@@ -14,7 +14,7 @@ export interface CtaSectionProps {
 
 export const DEFAULT_CTA_DATA: CtaData = {
     title: "Bergabung Bersama Kami",
-    description: "Pendaftaran tahun ajaran 2025/2026 telah dibuka. Mari menjadi bagian dari komunitas pembelajar masa depan.",
+    description: "Pendaftaran tahun ajaran 2026/2027 telah dibuka. Mari menjadi bagian dari komunitas pembelajar masa depan.",
     primaryBtnText: "Daftar Sekarang",
     primaryBtnLink: "/admission",
     secondaryBtnText: "Unduh Brosur",

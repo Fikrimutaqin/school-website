@@ -1,11 +1,13 @@
 "use client";
 
-import { Award, Play } from "lucide-react";
+import { useState } from "react";
+import { Award, Play, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { HeroSectionProps } from "@/types/hero/hero.type";
 import { useTypewriter } from "@/hooks/use-typewriter";
 
 export default function HeroSection({ data }: HeroSectionProps) {
+    const [isVideoOpen, setIsVideoOpen] = useState(false);
     const words = data.titleHighlight
         ? ["Leaders", "Innovators", "Achievers"]
         : [];
@@ -84,7 +86,15 @@ export default function HeroSection({ data }: HeroSectionProps) {
                             variant="outline"
                             className="bg-white hover:bg-zinc-100 text-slate-900 border-0 font-medium px-8 py-6 rounded-full text-base transition-all duration-300 shadow-xl hover:scale-105 flex items-center gap-2 cursor-pointer w-full sm:w-auto"
                         >
-                            <a href={data.secondaryBtnLink}>
+                            <a
+                                href={data.secondaryBtnLink}
+                                onClick={(e) => {
+                                    if (data.secondaryBtnLink === "#tour") {
+                                        e.preventDefault();
+                                        setIsVideoOpen(true);
+                                    }
+                                }}
+                            >
                                 {data.isShowIconBtnSecondary && (
                                     <Play className="w-5 h-5 fill-primary text-primary" />
                                 )}
@@ -94,6 +104,37 @@ export default function HeroSection({ data }: HeroSectionProps) {
                     )}
                 </div>
             </div>
+
+            {/* Video Modal Overlay */}
+            {isVideoOpen && (
+                <div
+                    className="fixed inset-0 bg-black/85  z-9999 flex items-center justify-center p-4 sm:p-6 md:p-8 transition-opacity duration-300"
+                    onClick={() => setIsVideoOpen(false)}
+                >
+                    <div
+                        className="relative w-full max-w-4xl bg-black rounded-3xl overflow-hidden shadow-2xl border border-white/10 aspect-video transition-transform duration-300 transform scale-100"
+                        onClick={(e) => e.stopPropagation()}
+                    >
+                        {/* Close button */}
+                        <button
+                            onClick={() => setIsVideoOpen(false)}
+                            className="absolute top-4 right-4 bg-black/60 hover:bg-black/80 text-white rounded-full p-2.5 transition-all duration-300 cursor-pointer backdrop-blur-md z-20 border border-white/10 active:scale-95"
+                        >
+                            <X className="w-5 h-5" />
+                        </button>
+
+                        {/* Video frame */}
+                        <iframe
+                            src="https://www.youtube.com/embed/EngW7tLk6R8?autoplay=1&rel=0"
+                            title="School Virtual Tour"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                            allowFullScreen
+                            loading="eager"
+                            className="w-full h-full border-0"
+                        />
+                    </div>
+                </div>
+            )}
         </section>
     );
 }
