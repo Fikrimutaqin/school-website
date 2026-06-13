@@ -5,7 +5,7 @@ export interface FloatingWidgetsData {
 }
 
 export const DEFAULT_FLOATING_DATA: FloatingWidgetsData = {
-    whatsAppNumber: "6281234567890",
+    whatsAppNumber: "6289681776494",
     whatsAppMessage: "Halo St. Akademi Excellence, saya ingin menanyakan informasi mengenai pendaftaran sekolah.",
     scrollThreshold: 300
 };
